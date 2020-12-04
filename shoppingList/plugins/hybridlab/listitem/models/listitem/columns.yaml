@@ -1,0 +1,17 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id:
+        label: ID
+        searchable: true
+    name:
+        label: Item name
+        searchable: true
+    shopping_list_id:
+        label: List Id
+        searchable: true
+    completed:
+        label: Done
+

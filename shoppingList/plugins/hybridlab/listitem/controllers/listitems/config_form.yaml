@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: List Item
+
+# Model Form Field configuration
+form: $/hybridlab/listitem/models/listitem/fields.yaml
+
+# Model Class name
+modelClass: Hybridlab\ListItem\Models\ListItem
+
+# Default redirect location
+defaultRedirect: hybridlab/listitem/listitems
+
+# Create page
+create:
+    title: Create List Item
+    redirect: hybridlab/listitem/listitems/update/:id
+    redirectClose: hybridlab/listitem/listitems
+
+# Update page
+update:
+    title: Edit List Item
+    redirect: hybridlab/listitem/listitems
+    redirectClose: hybridlab/listitem/listitems
+
+# Preview page
+preview:
+    title: Preview List Item

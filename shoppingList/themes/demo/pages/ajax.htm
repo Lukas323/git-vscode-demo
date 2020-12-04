@@ -1,0 +1,136 @@
+title = "AJAX framework"
+url = "/demo/ajax"
+layout = "default"
+is_hidden = 0
+
+
+==
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<style>
+    .lists {
+        max-width: 1140px;
+        padding-top: 50px;
+        text-align: center;
+    }
+
+    .items ul, .lists ul {
+        list-style: none;
+    }
+
+    .items ul li, .lists ul li {
+        max-width: 400px;
+        margin: 10px auto;
+        background: #3d9690;
+        color: black;
+        text-align: left;
+        padding: 10px 20px;
+    }
+
+    .items {
+        display: none;
+        position: fixed;
+        top: 0;
+        background: rgba(0, 0, 0, .4);
+        height: 100%;
+        width: 100%;
+    }
+
+    .items-wrapper {
+        margin: 100px auto auto;
+        max-width: 500px;
+        height: 400px;
+        background: white;
+
+    }
+
+    .items-wrapper input {
+
+    }
+
+
+</style>
+<div class="lists">
+    <ul id="all-lists">
+
+    </ul>
+    <button onclick="addNewList()">Add</button>
+</div>
+<div class="items">
+    <div class="items-wrapper">
+        <ul id="all-items">
+
+        </ul>
+        <button onclick="$('.items').hide()">Back</button>
+    </div>
+</div>
+
+<script>
+    async function getAll(link = '') {
+        return new Promise((resolve, reject) => {
+            axios.get(`http://shoppinglist.test/api/lists/${link}`)
+                .then(response => resolve(response.data))
+                .catch(error => reject(error.response))
+        });
+    }
+    async function createList() {
+        const lists = await getAll();
+        $('#all-lists').html('');
+        lists.forEach(list => {
+            $('#all-lists').append(`
+                    <li onclick="changeList(this)" data-id="${list.id}">
+                        ${list.list_name}
+                        <button onclick="deleteList(event)">Delete</button>
+                    </li>
+                `);
+        });
+    }
+    createList();
+
+    function deleteList(e) {
+        e.stopPropagation();
+        let id = e.path[1].getAttribute('data-id');
+        axios.delete(`http://shoppinglist.test/api/lists/${id}`).catch(error => console.log(error))
+        createList();
+    }
+    function changeList(list) {
+        let ul = $('#all-items');
+        ul.html('')
+        let id;
+        if(typeof(list) == "number") {
+            id = list;
+        }
+        else {
+            id = list.getAttribute('data-id')
+        }
+        console.log(id)
+        const items = getAll(`${id}/items`);
+        $('.items').show();
+        items.forEach(item => {
+            ul.append(`
+                    <li>
+                        ${item.name}
+                        ${item.quantity}
+                        ${item.type}
+                    </li>
+                `);
+        });
+
+    }
+    function addNewList(){
+        axios.post('http://shoppinglist.test/api/lists', {
+            color: 'blue'
+        }).then(function (response) {
+            createList();
+            changeList(response.data['id']);
+        }).catch(function(error){
+            console.log(error);
+        })
+    }
+
+    function itemsBack() {
+        $('.items').hide();
+    }
+
+</script>

@@ -1,0 +1,33 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name:
+        label: Item name
+        type: text
+
+    quantity:
+        label: Quantity
+        type: number
+        min: 1
+        default: 1
+    type:
+        label: Type
+        type: dropdown
+    shopping_list_id:
+        label: List ID
+        type: dropdown
+    completed:
+        label: Completed
+        type: checkbox
+        default: false
+#    sort_order_handle:
+#        label: " "
+#        type: partial
+#        path: $/hybridlab/listitem/models/listitem/_reorder_handle.htm
+#        sortable: false
+#        width: 60px
+#    sort_order:
+#        invisible: true
+#        type: number

@@ -1,0 +1,77 @@
+title = "Plugin components"
+url = "/demo/plugins/:listId"
+layout = "default"
+
+[displayList]
+==
+
+{% set list = displayList.list %}
+<style>
+    .main {
+        max-width: 1140px;
+        margin: auto;
+        padding-top: 50px;
+        text-align: center;
+    }
+    .main ul {
+        list-style: none;
+
+    }
+    .main li {
+
+        max-width: 400px;
+        margin: 10px auto;
+        background: #3d9690;
+        color: black;
+        text-align: left;
+        padding: 10px 20px;
+    }
+    .main li input {
+        background: transparent;
+        border: none;
+        outline: none;
+    }
+    .main li span:nth-child(2) {
+        padding-left: 30px;
+        color: #404040;
+    }
+    #new {
+        padding: 10px 20px;
+        background: #023026;
+        outline: none;
+        border: none;
+        text-align: center;
+    }
+    #new {
+        padding: 10px 20px;
+        background: #023026;
+        outline: none;
+        border: none;
+
+    }
+</style>
+<div class="main">
+    <button id="save">Save</button>
+    <input type="text" id="list_name" value="{{list.list_name}}">
+    <ul>
+        {% for list_item in list.items %}
+            <li class="item">
+                <input class="name" type="text" value="{{ list_item.name}}">
+                <input class="quantity" type="text" value="{{ list_item.quantity }}">
+            </li>
+        {% endfor %}
+    </ul>
+    <button id="new">New</button>
+</div>
+<div class="overlay"></div>
+
+<script>
+    let save = document.querySelector('#save');
+    const all = '{{list.items }}';
+    console.log(all)
+    let items = document.querySelector('#save');
+    save.addEventListener('click', function(){
+
+    });
+</script>
+

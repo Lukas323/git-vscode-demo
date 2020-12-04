@@ -1,0 +1,18 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    list_name:
+       label: Name
+       type: text
+       span: left
+    color:
+        label: color
+        span: right
+        type: dropdown
+    items:
+        label: Items
+        type: partial
+        path: items
+

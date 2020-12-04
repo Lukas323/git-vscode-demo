@@ -1,0 +1,136 @@
+title = "Demonstration"
+url = "/"
+layout = "default"
+==
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js"></script>
+<style>
+    .lists {
+        max-width: 1140px;
+        padding-top: 50px;
+        text-align: center;
+    }
+
+    .items ul, .lists ul {
+        list-style: none;
+    }
+
+    .items ul li, .lists ul li {
+        max-width: 400px;
+        margin: 10px auto;
+        background: #3d9690;
+        color: black;
+        text-align: left;
+        padding: 10px 20px;
+    }
+
+    .items {
+        display: none;
+        position: fixed;
+        top: 0;
+        background: rgba(0, 0, 0, .4);
+        height: 100%;
+        width: 100%;
+    }
+
+    .items-wrapper {
+        margin: 100px auto auto;
+        max-width: 500px;
+        height: 400px;
+        background: white;
+
+    }
+
+    .items-wrapper input {
+
+    }
+
+
+</style>
+<div class="lists">
+
+    <ul id="all-lists">
+
+    </ul>
+    <button onclick="addList()">Add</button>
+    <div class="items">
+        <div class="items-wrapper">
+            <ul id="all-items">
+
+            </ul>
+            <button onclick="itemsBack()">Back</button>
+        </div>
+    </div>
+
+</div>
+
+
+<script>
+    function deleteList(event, list) {
+        event.stopPropagation();
+        console.log('yes')
+    }
+    function addList() {
+        axios.post('http://shoppinglist.test/api/lists', {
+            color: 'blue'
+        }).then(function (response) {
+            console.log(response.data)
+            buildList();
+            var all = document.querySelector('#all-lists').childNodes;
+            changeList(all[all.length - 1]);
+        }).catch(function(error){
+            console.log(error);
+        })
+    }
+
+    function itemsBack() {
+        document.querySelector('.items').style.display = 'none';
+    }
+
+    function changeList(list) {
+        let ul = document.querySelector('#all-items');
+        ul.innerHTML = '';
+        let id = list.getAttribute('data-id')
+        axios.get(`http://shoppinglist.test/api/lists/${id}/items`)
+            .then(function (response) {
+                // handle success
+                document.querySelector('.items').style.display = 'block';
+                console.log(response.data);
+                for (let item of response.data) {
+                    ul.innerHTML += `<li>${item.name} ${item.quantity} ${item.type}</li>`
+
+                }
+            })
+            .catch(function (error) {
+                // handle error
+                console.log(error);
+            });
+
+    }
+
+    function buildList() {
+        let ul = document.querySelector('#all-lists');
+        axios.get('http://shoppinglist.test/api/lists')
+            .then(function (response) {
+                // handle success
+                console.log(response);
+                ul.innerHTML = '';
+                for (let list of response.data) {
+                    ul.innerHTML += `<li onclick="changeList(this)" data-id="${list.id}">
+${list.list_name}
+
+<button onclick="this.stopPropagation()">Delete</button>
+</li>`
+                }
+            })
+            .catch(function (error) {
+                // handle error
+                console.log(error);
+            });
+    }
+
+    buildList();
+
+
+</script>
+

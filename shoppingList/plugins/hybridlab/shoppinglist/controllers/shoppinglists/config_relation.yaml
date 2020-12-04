@@ -1,0 +1,16 @@
+# ===================================
+#  Relation Behavior Config
+# ===================================
+
+items:
+    label: Items
+    view:
+        list: $/hybridlab/listitem/models/listitem/columns.yaml
+        toolbarButtons: create|delete|add|remove
+        showSearch: true
+        defaultSort:
+            column: sort_order
+            direction: asc
+    manage:
+        form: $/hybridlab/listitem/models/listitem/fields.yaml
+
