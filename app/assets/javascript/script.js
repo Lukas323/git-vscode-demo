@@ -48,7 +48,7 @@ const app = new Vue({
                 cancelButtonText: 'Zrušiť',
               }).then((result) => {
                     if(result.isConfirmed){
-                        axios.delete(`http://shoppinglist.test/api/lists/${list.id}`);
+                        axios.delete(`http://shoppinglist.test/cms/api/lists/${list.id}`);
                         this.lists.splice(index, 1);
                     }
               });
@@ -75,7 +75,7 @@ const app = new Vue({
                 this.newList ='Nákupný zoznam';
             }
             if(this.adding) {
-                let newList = await axios.post(`http://shoppinglist.test/api/lists`, {
+                let newList = await axios.post(`http://shoppinglist.test/cms/api/lists`, {
                     color: document.querySelector('input[name="farba"]:checked').value,
                     list_name: this.newList,
                 });  
@@ -85,7 +85,7 @@ const app = new Vue({
                 this.changeListItems(this.curList);
             }
             else{
-                axios.patch(`http://shoppinglist.test/api/lists/${this.curList.id}`, {
+                axios.patch(`http://shoppinglist.test/cms/api/lists/${this.curList.id}`, {
                     color: document.querySelector('input[name="farba"]:checked').value,
                     list_name: this.newList,
                 });  
@@ -129,7 +129,7 @@ const app = new Vue({
                     cancelButtonText: 'Zrušiť',
                 }).then(async (result) => {
                         if(result.isConfirmed){
-                            axios.delete(`http://shoppinglist.test/api/lists/${this.curList.id}/items`)
+                            axios.delete(`http://shoppinglist.test/cms/api/lists/${this.curList.id}/items`)
                             this.curList.items = [];
                         }
                 })
@@ -151,7 +151,7 @@ const app = new Vue({
             if(this.newItem.quantity == null){
                 this.newItem.quantity = 1;
             }
-            axios.post(`http://shoppinglist.test/api/lists/items`,{
+            axios.post(`http://shoppinglist.test/cms/api/lists/items`,{
                 name: this.newItem.name,
                 quantity: parseInt(this.newItem.quantity),
                 type: this.$refs.type.value,
@@ -162,7 +162,7 @@ const app = new Vue({
             .then((response) => this.curList.items.push(response.data))
             .catch((error) => console.log(error));
 
-            axios.post(`http://shoppinglist.test/api/all-items`,{
+            axios.post(`http://shoppinglist.test/cms/api/all-items`,{
                 name: this.newItem.name
             });
             // this.curList.items.push(newItem.data);
@@ -196,13 +196,13 @@ const app = new Vue({
         },
         async stepEnd(item, element) {
             clearInterval(this.timer)
-            axios.patch(`http://shoppinglist.test/api/lists/items/${item.id}`, {
+            axios.patch(`http://shoppinglist.test/cms/api/lists/items/${item.id}`, {
                 quantity: element.path[1].querySelector('input[type=number]').value
             });
         },
         async checkItem(item) {
             
-            axios.patch(`http://shoppinglist.test/api/lists/items/${item.id}`, {
+            axios.patch(`http://shoppinglist.test/cms/api/lists/items/${item.id}`, {
                 completed: item.completed == 0 ? true: false
             });
             item.completed = item.completed == 0 ? 1 : 0;
@@ -212,7 +212,7 @@ const app = new Vue({
             let items = [...this.curList.items];
             items.forEach(item => {
                 if(item.completed == 1) {
-                    axios.delete(`http://shoppinglist.test/api/lists/items/${item.id}`);
+                    axios.delete(`http://shoppinglist.test/cms/api/lists/items/${item.id}`);
                     this.curList.items.splice(this.curList.items.indexOf(item), 1)
 
                 }
@@ -238,7 +238,7 @@ const app = new Vue({
                 return;
 
             }
-            axios.get(`http://shoppinglist.test/api/all-items/${this.newItem.name}`)
+            axios.get(`http://shoppinglist.test/cms/api/all-items/${this.newItem.name}`)
             .then((response) => {
                 
                 this.newItem.options = response.data
@@ -252,7 +252,7 @@ const app = new Vue({
         },
         async deleteOption(option, e) {
             e.stopPropagation();
-            axios.delete(`http://shoppinglist.test/api/all-items/${option.id}`)
+            axios.delete(`http://shoppinglist.test/cms/api/all-items/${option.id}`)
             .then(() => {
                 
                 this.getOptions();
@@ -269,7 +269,7 @@ const app = new Vue({
     },
     mounted: 
         async function() {
-            axios.get(`http://shoppinglist.test/api/lists`)
+            axios.get(`http://shoppinglist.test/cms/api/lists`)
             .then((response) => this.lists = response.data)
             .catch((error) => console.log(error));
             
