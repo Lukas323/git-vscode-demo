@@ -1,0 +1,982 @@
+:root {
+    --blue-background: linear-gradient(328deg, rgba(29, 29, 29, 0.05) 0%, rgba(29, 29, 29, 0.05) 25%,rgba(226, 226, 226, 0.05) 25%, rgba(226, 226, 226, 0.05) 50%,rgba(21, 21, 21, 0.05) 50%, rgba(21, 21, 21, 0.05) 75%,rgba(216, 216, 216, 0.05) 75%, rgba(216, 216, 216, 0.05) 100%),linear-gradient(172deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.05) 25%,rgba(108, 108, 108, 0.05) 25%, rgba(108, 108, 108, 0.05) 50%,rgba(21, 21, 21, 0.05) 50%, rgba(21, 21, 21, 0.05) 75%,rgba(236, 236, 236, 0.05) 75%, rgba(236, 236, 236, 0.05) 100%),linear-gradient(207deg, rgba(153, 153, 153, 0.05) 0%, rgba(153, 153, 153, 0.05) 25%,rgba(83, 83, 83, 0.05) 25%, rgba(83, 83, 83, 0.05) 50%,rgba(5, 5, 5, 0.05) 50%, rgba(5, 5, 5, 0.05) 75%,rgba(82, 82, 82, 0.05) 75%, rgba(82, 82, 82, 0.05) 100%),linear-gradient(297deg, rgba(26, 26, 26, 0.05) 0%, rgba(26, 26, 26, 0.05) 25%,rgba(223, 223, 223, 0.05) 25%, rgba(223, 223, 223, 0.05) 50%,rgba(232, 232, 232, 0.05) 50%, rgba(232, 232, 232, 0.05) 75%,rgba(153, 153, 153, 0.05) 75%, rgba(153, 153, 153, 0.05) 100%),linear-gradient(204deg, rgba(120, 120, 120, 0.05) 0%, rgba(120, 120, 120, 0.05) 25%,rgba(191, 191, 191, 0.05) 25%, rgba(191, 191, 191, 0.05) 50%,rgba(246, 246, 246, 0.05) 50%, rgba(246, 246, 246, 0.05) 75%,rgba(123, 123, 123, 0.05) 75%, rgba(123, 123, 123, 0.05) 100%),linear-gradient(90deg, rgb(32,234,255), rgb(37,116,255));
+
+    --red-background: linear-gradient(328deg, rgba(29, 29, 29, 0.05) 0%, rgba(29, 29, 29, 0.05) 25%,rgba(226, 226, 226, 0.05) 25%, rgba(226, 226, 226, 0.05) 50%,rgba(21, 21, 21, 0.05) 50%, rgba(21, 21, 21, 0.05) 75%,rgba(216, 216, 216, 0.05) 75%, rgba(216, 216, 216, 0.05) 100%),linear-gradient(172deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.05) 25%,rgba(108, 108, 108, 0.05) 25%, rgba(108, 108, 108, 0.05) 50%,rgba(21, 21, 21, 0.05) 50%, rgba(21, 21, 21, 0.05) 75%,rgba(236, 236, 236, 0.05) 75%, rgba(236, 236, 236, 0.05) 100%),linear-gradient(207deg, rgba(153, 153, 153, 0.05) 0%, rgba(153, 153, 153, 0.05) 25%,rgba(83, 83, 83, 0.05) 25%, rgba(83, 83, 83, 0.05) 50%,rgba(5, 5, 5, 0.05) 50%, rgba(5, 5, 5, 0.05) 75%,rgba(82, 82, 82, 0.05) 75%, rgba(82, 82, 82, 0.05) 100%),linear-gradient(297deg, rgba(26, 26, 26, 0.05) 0%, rgba(26, 26, 26, 0.05) 25%,rgba(223, 223, 223, 0.05) 25%, rgba(223, 223, 223, 0.05) 50%,rgba(232, 232, 232, 0.05) 50%, rgba(232, 232, 232, 0.05) 75%,rgba(153, 153, 153, 0.05) 75%, rgba(153, 153, 153, 0.05) 100%),linear-gradient(204deg, rgba(120, 120, 120, 0.05) 0%, rgba(120, 120, 120, 0.05) 25%,rgba(191, 191, 191, 0.05) 25%, rgba(191, 191, 191, 0.05) 50%,rgba(246, 246, 246, 0.05) 50%, rgba(246, 246, 246, 0.05) 75%,rgba(123, 123, 123, 0.05) 75%, rgba(123, 123, 123, 0.05) 100%),linear-gradient(90deg, rgb(252, 67, 67), rgb(255, 21, 21));
+
+    --orange-background: linear-gradient(328deg, rgba(29, 29, 29, 0.05) 0%, rgba(29, 29, 29, 0.05) 25%,rgba(226, 226, 226, 0.05) 25%, rgba(226, 226, 226, 0.05) 50%,rgba(21, 21, 21, 0.05) 50%, rgba(21, 21, 21, 0.05) 75%,rgba(216, 216, 216, 0.05) 75%, rgba(216, 216, 216, 0.05) 100%),linear-gradient(172deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.05) 25%,rgba(108, 108, 108, 0.05) 25%, rgba(108, 108, 108, 0.05) 50%,rgba(21, 21, 21, 0.05) 50%, rgba(21, 21, 21, 0.05) 75%,rgba(236, 236, 236, 0.05) 75%, rgba(236, 236, 236, 0.05) 100%),linear-gradient(207deg, rgba(153, 153, 153, 0.05) 0%, rgba(153, 153, 153, 0.05) 25%,rgba(83, 83, 83, 0.05) 25%, rgba(83, 83, 83, 0.05) 50%,rgba(5, 5, 5, 0.05) 50%, rgba(5, 5, 5, 0.05) 75%,rgba(82, 82, 82, 0.05) 75%, rgba(82, 82, 82, 0.05) 100%),linear-gradient(297deg, rgba(26, 26, 26, 0.05) 0%, rgba(26, 26, 26, 0.05) 25%,rgba(223, 223, 223, 0.05) 25%, rgba(223, 223, 223, 0.05) 50%,rgba(232, 232, 232, 0.05) 50%, rgba(232, 232, 232, 0.05) 75%,rgba(153, 153, 153, 0.05) 75%, rgba(153, 153, 153, 0.05) 100%),linear-gradient(204deg, rgba(120, 120, 120, 0.05) 0%, rgba(120, 120, 120, 0.05) 25%,rgba(191, 191, 191, 0.05) 25%, rgba(191, 191, 191, 0.05) 50%,rgba(246, 246, 246, 0.05) 50%, rgba(246, 246, 246, 0.05) 75%,rgba(123, 123, 123, 0.05) 75%, rgba(123, 123, 123, 0.05) 100%),linear-gradient(90deg, rgb(255, 174, 24), rgb(253, 165, 0));
+
+    --green-background: linear-gradient(328deg, rgba(29, 29, 29, 0.05) 0%, rgba(29, 29, 29, 0.05) 25%,rgba(226, 226, 226, 0.05) 25%, rgba(226, 226, 226, 0.05) 50%,rgba(21, 21, 21, 0.05) 50%, rgba(21, 21, 21, 0.05) 75%,rgba(216, 216, 216, 0.05) 75%, rgba(216, 216, 216, 0.05) 100%),linear-gradient(172deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.05) 25%,rgba(108, 108, 108, 0.05) 25%, rgba(108, 108, 108, 0.05) 50%,rgba(21, 21, 21, 0.05) 50%, rgba(21, 21, 21, 0.05) 75%,rgba(236, 236, 236, 0.05) 75%, rgba(236, 236, 236, 0.05) 100%),linear-gradient(207deg, rgba(153, 153, 153, 0.05) 0%, rgba(153, 153, 153, 0.05) 25%,rgba(83, 83, 83, 0.05) 25%, rgba(83, 83, 83, 0.05) 50%,rgba(5, 5, 5, 0.05) 50%, rgba(5, 5, 5, 0.05) 75%,rgba(82, 82, 82, 0.05) 75%, rgba(82, 82, 82, 0.05) 100%),linear-gradient(297deg, rgba(26, 26, 26, 0.05) 0%, rgba(26, 26, 26, 0.05) 25%,rgba(223, 223, 223, 0.05) 25%, rgba(223, 223, 223, 0.05) 50%,rgba(232, 232, 232, 0.05) 50%, rgba(232, 232, 232, 0.05) 75%,rgba(153, 153, 153, 0.05) 75%, rgba(153, 153, 153, 0.05) 100%),linear-gradient(204deg, rgba(120, 120, 120, 0.05) 0%, rgba(120, 120, 120, 0.05) 25%,rgba(191, 191, 191, 0.05) 25%, rgba(191, 191, 191, 0.05) 50%,rgba(246, 246, 246, 0.05) 50%, rgba(246, 246, 246, 0.05) 75%,rgba(123, 123, 123, 0.05) 75%, rgba(123, 123, 123, 0.05) 100%),linear-gradient(90deg, rgb(67, 252, 67), rgb(67, 252, 67));
+
+    --brown-background: linear-gradient(328deg, rgba(29, 29, 29, 0.05) 0%, rgba(29, 29, 29, 0.05) 25%,rgba(226, 226, 226, 0.05) 25%, rgba(226, 226, 226, 0.05) 50%,rgba(21, 21, 21, 0.05) 50%, rgba(21, 21, 21, 0.05) 75%,rgba(216, 216, 216, 0.05) 75%, rgba(216, 216, 216, 0.05) 100%),linear-gradient(172deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.05) 25%,rgba(108, 108, 108, 0.05) 25%, rgba(108, 108, 108, 0.05) 50%,rgba(21, 21, 21, 0.05) 50%, rgba(21, 21, 21, 0.05) 75%,rgba(236, 236, 236, 0.05) 75%, rgba(236, 236, 236, 0.05) 100%),linear-gradient(207deg, rgba(153, 153, 153, 0.05) 0%, rgba(153, 153, 153, 0.05) 25%,rgba(83, 83, 83, 0.05) 25%, rgba(83, 83, 83, 0.05) 50%,rgba(5, 5, 5, 0.05) 50%, rgba(5, 5, 5, 0.05) 75%,rgba(82, 82, 82, 0.05) 75%, rgba(82, 82, 82, 0.05) 100%),linear-gradient(297deg, rgba(26, 26, 26, 0.05) 0%, rgba(26, 26, 26, 0.05) 25%,rgba(223, 223, 223, 0.05) 25%, rgba(223, 223, 223, 0.05) 50%,rgba(232, 232, 232, 0.05) 50%, rgba(232, 232, 232, 0.05) 75%,rgba(153, 153, 153, 0.05) 75%, rgba(153, 153, 153, 0.05) 100%),linear-gradient(204deg, rgba(120, 120, 120, 0.05) 0%, rgba(120, 120, 120, 0.05) 25%,rgba(191, 191, 191, 0.05) 25%, rgba(191, 191, 191, 0.05) 50%,rgba(246, 246, 246, 0.05) 50%, rgba(246, 246, 246, 0.05) 75%,rgba(123, 123, 123, 0.05) 75%, rgba(123, 123, 123, 0.05) 100%),linear-gradient(90deg, rgb(139, 78, 42), rgb(102, 47, 16));
+
+    --main-background: linear-gradient(328deg, rgba(29, 29, 29, 0.05) 0%, rgba(29, 29, 29, 0.05) 25%,rgba(226, 226, 226, 0.05) 25%, rgba(226, 226, 226, 0.05) 50%,rgba(21, 21, 21, 0.05) 50%, rgba(21, 21, 21, 0.05) 75%,rgba(216, 216, 216, 0.05) 75%, rgba(216, 216, 216, 0.05) 100%),linear-gradient(172deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.05) 25%,rgba(108, 108, 108, 0.05) 25%, rgba(108, 108, 108, 0.05) 50%,rgba(21, 21, 21, 0.05) 50%, rgba(21, 21, 21, 0.05) 75%,rgba(236, 236, 236, 0.05) 75%, rgba(236, 236, 236, 0.05) 100%),linear-gradient(207deg, rgba(153, 153, 153, 0.05) 0%, rgba(153, 153, 153, 0.05) 25%,rgba(83, 83, 83, 0.05) 25%, rgba(83, 83, 83, 0.05) 50%,rgba(5, 5, 5, 0.05) 50%, rgba(5, 5, 5, 0.05) 75%,rgba(82, 82, 82, 0.05) 75%, rgba(82, 82, 82, 0.05) 100%),linear-gradient(297deg, rgba(26, 26, 26, 0.05) 0%, rgba(26, 26, 26, 0.05) 25%,rgba(223, 223, 223, 0.05) 25%, rgba(223, 223, 223, 0.05) 50%,rgba(232, 232, 232, 0.05) 50%, rgba(232, 232, 232, 0.05) 75%,rgba(153, 153, 153, 0.05) 75%, rgba(153, 153, 153, 0.05) 100%),linear-gradient(204deg, rgba(120, 120, 120, 0.05) 0%, rgba(120, 120, 120, 0.05) 25%,rgba(191, 191, 191, 0.05) 25%, rgba(191, 191, 191, 0.05) 50%,rgba(246, 246, 246, 0.05) 50%, rgba(246, 246, 246, 0.05) 75%,rgba(123, 123, 123, 0.05) 75%, rgba(123, 123, 123, 0.05) 100%),linear-gradient(90deg, #ffdbac, #ffca84);
+
+    --pc-background: radial-gradient(circle at center center, rgba(33,33,33,0),rgb(33,33,33)),repeating-linear-gradient(135deg, rgb(33,33,33) 0px, rgb(33,33,33) 1px,transparent 1px, transparent 4px),repeating-linear-gradient(45deg, rgb(56,56,56) 0px, rgb(56,56,56) 5px,transparent 5px, transparent 6px),linear-gradient(90deg, rgb(33,33,33),rgb(33,33,33));
+}
+
+
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    outline: none;
+}
+
+html, body {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    max-width: 2200px;
+    margin: auto;
+    height: 100vh;
+    width: fit-content;
+}
+
+body {
+    position: relative;
+    display: flex;
+}
+
+#app {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: fit-content;
+    display: flex;
+}
+
+h1, h2, h3, h4, h5, h6, p, a, input, button, li {
+    font-family: 'Amiko';
+    font-weight: 400;
+    line-height: 1.2;
+    color: black;
+}
+
+h1 {
+    font-family: 'Amaranth';
+    color: black;
+    font-size: 8vw;
+}
+
+hr {
+    border: none;
+    border-bottom: 1px solid rgb(185, 185, 185);
+}
+
+ul {
+    list-style: none;
+}
+
+.zoznam-active {
+    right: 100vw !important;
+}
+
+.zoznam-active + #zoznam{
+    left: 0 !important;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+input[type="number"] {
+    -moz-appearance:textfield;
+}
+
+button, img {
+    cursor: pointer;
+}
+
+ul li {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+}
+
+/* pridat */
+
+#pridat-zoznam-wrapper {
+    position: absolute;
+    top: 0;
+    left: 100vw;
+    width: 100vw;
+    height: 100vh;
+    z-index: 999;
+    transition: 0.3s;
+}
+
+#pridat-zoznam {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    height: fit-content;
+    padding: 20px;
+    background-color: white;
+    border-radius: 20px;
+    transform: translate(-50%, -50%);
+} 
+.pridat-zoznam-active {
+    left: 0 !important;
+}
+
+#pridat-zoznam * {
+    margin: 5px 0;
+}
+
+#pridat-zoznam input[type="text"] {
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    padding: 5px;
+    width: 100%;
+    background-color: transparent;
+
+}
+
+#pridat-zoznam input[type="radio"] {
+    display: none;
+    
+}
+
+#pridat-zoznam input[type="radio"]:checked + label {
+    border: 2px solid rgb(0, 183, 255);
+}
+
+#pridat-zoznam-button-wrapper {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    justify-content: space-evenly;
+    margin-top: 20px;
+}
+
+#pridat-zoznam button {
+    border: none;
+    background: none;
+    background-color: rgb(238, 238, 238);
+    border-radius: 6px;
+    padding: 10px 20px;
+    font-size: 4vw;
+}
+
+label {
+    display: block;
+    width: 25px;
+    height: 25px;
+    margin: 0 10px 0 7px !important;
+}
+
+.blue {
+    background-image: var(--blue-background);
+}
+
+.brown {
+    background-image: var(--brown-background);
+}
+
+.red {
+    background-image: var(--red-background);
+}
+.green {
+    background-image: var(--green-background);
+}
+.orange {
+    background-image: var(--orange-background);
+}
+
+
+/* pridat-polozku */
+
+#pridat-polozku-wrapper {
+    position: absolute;
+    top: 0;
+    left: 100vw;
+    width: 100vw;
+    height: 100vh;
+    z-index: 999;
+    transition: 0.3s;
+    z-index: 1000
+}
+
+#pridat-polozku {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    height: fit-content;
+    padding: 20px;
+    background-color: rgb(247, 247, 247);
+    border-radius: 20px;
+    transform: translate(-50%, -50%);
+    border: 1px solid rgb( 185, 185, 185);
+} 
+
+.pridat-polozku-active {
+    left: 0 !important;
+}
+
+#pridat-polozku * {
+    margin: 5px 0;
+}
+
+#pridat-polozku input[type="text"], #pridat-polozku input[id="mnozstvo"] {
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    padding: 5px;
+    width: 100%;
+    background-color: transparent;
+
+}
+
+#ponuka-moznosti {
+    display: none;
+    position: absolute;
+    top: 30px;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    background-color: white;
+}
+
+.ponuka-moznost-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin: 0 !important;
+    height: fit-content;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.ponuka-moznost-wrapper p {
+    margin: 0 !important;
+    max-width: 80%;
+    font-size: 15px;
+}
+
+.ponuka-moznost-wrapper img {
+    height: 15px;
+    margin: 0 !important;
+    transform: rotate(45deg);
+}
+
+#nova-polozka:focus + #ponuka-moznosti {
+    display: block !important;
+}
+
+#ponuka-moznosti:hover {
+    display: block !important;
+}
+
+#pridat-polozku input[id="mnozstvo"] {
+    width: 35px;
+    text-align: center;
+    background-color: transparent;
+
+}
+
+
+#pridat-polozku select {
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    padding: 4.3px;
+    margin-left: 10px;
+    background: none;
+}
+
+#pridat-polozku-button-wrapper {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    justify-content: space-evenly;
+    margin-top: 20px;
+}
+
+#pridat-polozku button {
+    border: none;
+    background: none;
+    background-color: rgb(238, 238, 238);
+    border-radius: 6px;
+    padding: 10px 20px;
+    font-size: 4vw;
+}
+.required{
+    border-bottom: 1.5px solid rgb(255, 91, 91) !important;
+}
+.required::placeholder{
+    color: red;
+}
+
+/* ---------------------Zoznam-zoznamov-------------------- */
+#ziaden-zoznam {
+    display: flex;
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    right: 5px;
+    top: 70px;
+    text-align: center;
+}
+
+#ziaden-zoznam h3 {
+    color: rgb(88, 88, 88);
+    font-size: 22px;
+}
+
+#ziaden-zoznam p {
+    color: rgb(88, 88, 88);
+}
+
+#ziaden-zoznam img {
+    height: 50px;
+    margin-left: 10px;
+}
+
+#zoznam-zoznamov {
+    position: relative;
+    top: 0;
+    right: 0;
+    /* right: 100vw; */
+    width: 100vw;
+    height: 100vh;
+    background-image: var(--main-background);
+    transition: 0.3s;
+}
+
+#nav-main {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 55px;
+    background-color: rgba(255, 255, 255, 0.3);
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 999;
+}
+
+#pridat-zoznam-button {
+    display: flex;
+    align-items: center;
+    height: fit-content;
+    width: fit-content;
+}
+
+#pridat-zoznam-button img {
+    height: 20px;
+    transition: 0.3s;
+}
+
+.pridat-zoznam-button-active img {
+    transform: rotate(-180deg) !important;
+}
+
+#main-main {
+    position: absolute;
+    top: 55px;
+    width: 100%;
+    height: calc(100vh - 55px);
+    padding-top: 20px;
+    overflow-y: scroll;
+}
+
+.zoznam-card {
+    position: relative;
+    right: 0;
+    top: 0;
+    margin: 0 auto 15px;
+    padding: 10px 15px;
+    width: 90%;
+    height: fit-content;
+    border-radius: 20px;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.3s !important;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.zoznam-card * {
+    z-index: 2;
+}
+
+.zoznam-card img {
+    height: 8vw;
+    margin-left: 10px;
+}
+.zoznam-card-text-wrapper {
+    z-index: 1; 
+    max-width: 75%;
+}
+.zoznam-card-button-wrapper {
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+}
+.zoznam-card h1{
+    font-size: 6vw;
+    margin-bottom: 5px;
+    word-wrap: break-word;
+}
+
+.zoznam-card p{
+    font-size: 3.5vw;
+}
+
+.zoznam-card-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2));
+    mask-image: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2));
+    -webkit-mask-size: 100%, 100%;
+    mask-size: 100%, 100%;
+    -webkit-mask-position: right;
+    mask-position: right;
+    z-index: 0;
+}
+
+
+/* ---------------------Zoznam-------------------- */
+
+
+#zoznam {
+    position: absolute;
+    top: 0;
+    left: 100vw;
+    width: 100vw;
+    height: 100vh;
+    transition: 0.3s;
+}
+
+
+/* Nakupny-Zoznam */
+
+#zoznam-main {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    padding-top: 45px;
+}
+
+#obsah {
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: calc(100% - 150px);
+    background-color: white;
+    border-radius: 20px 20px 0 0;
+    padding: 10px 20px 20px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+#ziadna-polozka {
+    display: flex;
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    left: 2px;
+    top: 15px;
+    text-align: center;
+}
+
+#ziadna-polozka h3 {
+    color: rgb(88, 88, 88);
+    font-size: 22px;
+}
+
+#ziadna-polozka p {
+    color: rgb(88, 88, 88);
+}
+
+#ziadna-polozka img {
+    height: 50px;
+    margin-right: 10px;
+    transform: scaleX(-1);
+}
+
+/* nav */
+
+#nav-zoznam {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 45px;
+    background-color: rgba(255, 255, 255, 0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    z-index: 999;
+}
+
+#nav-zoznam *{
+    text-decoration: none;
+}
+
+#vsetky-zoznami {
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    align-items: center;
+}
+
+#vsetky-zoznami img {
+    height: 15px;
+}   
+
+#vsetky-zoznami p {
+    height: fit-content;
+    margin: 3px 10px 0;
+}
+
+#vymazat-oznacene {
+    position: absolute;
+    top: 8px;
+    right: -50vw;
+    width: fit-content;
+    height: fit-content;
+    transition: 0.3s;
+    z-index: 997;
+}
+
+.vymazat-oznacene-active {
+    right: 10px !important;
+}
+
+#vymazat-oznacene img {
+    height: 30px;
+}
+
+
+/* zoznam-header */
+
+#header-zoznam {
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 150px;
+    width: 100%;
+    padding: 10px 15px 35px 10px;
+}
+
+#pridat-polozku-button {
+    position: absolute;
+    left: 15px;
+    bottom: 7px;
+    color: black;
+    display: flex;
+    align-items: center;
+}
+
+#pridat-polozku-button img {
+    height: 25px;
+    transition: 0.3s;
+}
+
+#vymazat-vsetko-button {
+    position: absolute;
+    right: 10px;
+    bottom: 5px;
+    color: black;
+    display: flex;
+    align-items: center;
+}
+
+
+/* polozky */
+
+.polozka {
+    position: relative;
+    right: 0;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+}
+
+.list-complete-enter, .list-complete-leave-to {
+    opacity: 0;
+    transform: translateX(-30px);
+}
+
+.list-complete-leave-active {
+    position: absolute;
+}
+
+.polozka-obsah-wrapper {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+    opacity: 1;
+    transition: 0.3s;
+}
+
+.vybavena-polozka {
+    width: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-bottom: 2px solid rgb(216, 49, 49);
+    z-index: 300;
+    transition: 0.3s;
+}
+
+.polozka-vybavena .vybavena-polozka {
+    width: 100% !important;
+    left: 0 !important;
+}
+
+.polozka-vybavena .polozka-obsah-wrapper {
+    opacity: 0.5;
+}
+
+.polozka p {
+    margin-right: 5px;
+    max-width: calc(100% - 115px);
+    word-wrap: break-word !important;
+}
+
+.pocet {
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+}
+
+.pocet img {
+    opacity: 0.3;
+    max-height: 22px;
+}
+
+.pocet input {
+    border: none;
+    background: none;
+    width: 30px;
+    text-align: center;
+    margin: 0 4px;
+}
+
+.pocet p {
+    font-size: 13.5px;
+    width: 18px;
+    text-align: center;
+    margin-top: 4px;
+    max-width: none;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.swal2-content {
+    font-family: 'Amiko';
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.swal2-popup {
+    max-width: 450px !important;
+    padding: 1.25em 1.25em 30px !important;
+    border-radius: 10px !important;
+}
+
+.swal2-actions {
+    margin: 30px auto 0;
+}
+
+.swal2-styled {
+    width: 35%;
+    min-width: 125px;
+    text-align: center;
+}
+
+@media only screen and (min-width: 550px) {
+
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
+    * {
+        scrollbar-width: none;
+    }
+
+    html, body {
+        height: 100vh;
+        width: 100vw;
+    }
+
+    body {
+        background-image: var(--pc-background);
+    }
+
+    #app {
+        width: 500px;
+        min-width: 500px;
+        height: 90vh;
+        max-height: 1500px;
+        margin-top: calc(50vh - 45vh);
+        margin-left: calc(50% - 250px);
+        border-radius: 15px;
+        overflow: hidden;
+    }
+
+    #ziaden-zoznam {
+        top: 85px;
+        right: 8px;
+    }
+
+    .zoznam-active {
+        right: 100% !important;
+    }
+
+    #zoznam-zoznamov {
+        width: 100%;
+        height: 100%;
+    }
+
+    #nav-main {
+        width: 100%;
+        height: 70px;
+    }
+
+    #nav-main p {
+        font-size: 25px;
+    }
+
+    #pridat-zoznam-button img {
+        height: 25px;
+    }
+    
+    #main-main {
+        top: 70px;
+        height: calc(100% - 70px);
+    }
+    
+    .zoznam-card {
+        border-radius: 15px;
+    }
+    
+    .zoznam-card img {
+        height: 40px;
+    }
+
+    .zoznam-card-text-wrapper {
+        max-width: 70%;
+    }
+    
+    .zoznam-card h1{
+        font-size: 30px;
+    }
+    
+    .zoznam-card p{
+        font-size: 18px;
+    }
+
+    /* ------------------------------------------------ */
+
+    #zoznam {
+        left: 100%;
+        width: 100%;
+        height: 100%;
+    }
+    
+    
+    /* Nakupny-Zoznam */
+    
+    #zoznam-main {
+        padding-top: 65px;
+    }
+    
+    #obsah {
+        border-radius: 15px 15px 0 0;
+        padding: 10px 15px 20px;
+    }
+    
+    /* nav */
+    
+    #nav-zoznam {
+        height: 65px;
+    }
+    
+    #nav-zoznam *{
+        text-decoration: none;
+    }
+    
+    #vsetky-zoznami img {
+        height: 17px;
+    }   
+
+    #vsetky-zoznami p {
+        font-size: 20px;
+    }
+    
+    #vymazat-oznacene {
+        top: 10px;
+        right: -50px;
+    }
+
+    #vymazat-oznacene img {
+        height: 45px;
+    }
+    
+
+    /* zoznam-header */
+
+    #header-zoznam h1 {
+        font-size: 40px;
+        margin-top: 0px;
+    }  
+    
+    #vymazat-vsetko-button {
+        font-size: 18px;
+    }
+    
+    
+    /* polozky */
+
+    .polozka p {
+        font-size: 18px;
+    }
+    
+    .pocet p {
+        font-size: 13.5px;
+        margin-top: 3px;
+    }
+
+    /* ------------------------------------------------ */
+
+    /* pridat-polozku */
+
+    #ziadna-polozka {
+        left: 3px;
+        top: 20px;
+    }
+
+    #pridat-polozku-wrapper {
+        left: 100%;
+        width: 100%;
+        height: 100%;
+    }
+
+    #pridat-polozku {
+        padding: 15px 20px;
+        border-radius: 15px;
+    } 
+
+    #pridat-polozku * {
+        margin: 5px 0;
+    }
+
+    #pridat-polozku input[type="text"], #pridat-polozku input[id="mnozstvo"] {
+        font-size: 15px;
+    }
+
+    .ponuka-moznost-wrapper p {
+        font-size: 17px;
+    }
+
+    .ponuka-moznost-wrapper img {
+        height: 18px;
+    }
+
+    #pridat-polozku input[id="mnozstvo"] {
+        width: 40px;
+    }
+
+    #pridat-polozku select {
+        font-size: 15px;
+        margin-top: 5.5px;
+    }
+
+    #pridat-polozku select * {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    #pridat-polozku-button-wrapper {
+        margin-top: 10px;
+    }
+
+    #pridat-polozku button {
+        font-size: 17px;
+    }
+
+
+    /* ------------------------------------------------------ */
+
+    /* pridat-zoznam */
+
+    #pridat-zoznam-wrapper {
+        left: 100%;
+        width: 100%;
+        height: 100%;
+    }
+
+    #pridat-zoznam {
+        padding: 15px 20px 20px;
+        border-radius: 15px;
+    } 
+
+    #pridat-zoznam input[type="text"] {
+        font-size: 17px;
+        margin-bottom: 15px;
+    }
+
+    #pridat-zoznam input[type="radio"]:checked + label {
+        border: 3px solid rgb(0, 183, 255);
+    }
+
+    #pridat-zoznam button {
+        font-size: 17px;
+    }
+
+    label {
+        width: 30px;
+        height: 30px;
+    }
+
+}
+
+@media only screen and (min-height: 1666px) {
+    #app {
+        margin-top: calc(50vh - 750px);
+    }
+}
+
+@media only screen and (max-width: 350px) {
+
+    #header-zoznam {
+        height: 120px;
+    }
+
+    #obsah {
+        height: calc(100% - 120px);
+    }
+
+}
