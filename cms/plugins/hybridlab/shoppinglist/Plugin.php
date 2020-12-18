@@ -3,93 +3,46 @@
 use Backend;
 use System\Classes\PluginBase;
 
-/**
- * ShoppingList Plugin Information File
- */
 class Plugin extends PluginBase
 {
-    /**
-     * Returns information about this plugin.
-     *
-     * @return array
-     */
+
     public function pluginDetails()
     {
         return [
-            'name'        => 'ShoppingList',
+            'name' => 'ShoppingList',
             'description' => 'No description provided yet...',
-            'author'      => 'Hybridlab',
-            'icon'        => 'icon-leaf'
+            'author' => 'Hybridlab',
+            'icon' => 'icon-leaf'
         ];
     }
 
-    /**
-     * Register method, called when the plugin is first registered.
-     *
-     * @return void
-     */
-    public function register()
-    {
-
-    }
-
-    /**
-     * Boot method, called right before the request route.
-     *
-     * @return array
-     */
-    public function boot()
-    {
-
-    }
-
-    /**
-     * Registers any front-end components implemented in this plugin.
-     *
-     * @return array
-     */
-    public function registerComponents()
-    {
-
-        return [
-            'Hybridlab\ShoppingList\Components\DisplayLists' => 'displayLists',
-            'Hybridlab\ShoppingList\Components\DisplayList' => 'displayList',
-        ];
-    }
-
-    /**
-     * Registers any back-end permissions used by this plugin.
-     *
-     * @return array
-     */
-    public function registerPermissions()
-    {
-        return []; // Remove this line to activate
-
-        return [
-            'hybridlab.shoppinglist.some_permission' => [
-                'tab' => 'ShoppingList',
-                'label' => 'Some permission'
-            ],
-        ];
-    }
-
-    /**
-     * Registers back-end navigation items for this plugin.
-     *
-     * @return array
-     */
     public function registerNavigation()
     {
 
         return [
             'shoppinglist' => [
-                'label'       => 'ShoppingList',
-                'url'         => Backend::url('hybridlab/shoppinglist/shoppinglists'),
-                'icon'        => 'icon-leaf',
+                'label' => 'Lists',
+                'url' => Backend::url('hybridlab/shoppinglist/shoppinglists'),
+                'icon' => 'icon-files-o',
                 'permissions' => ['hybridlab.shoppinglist.*'],
-                'order'       => 500,
-            ],
+                'order' => 500,
+                'sideMenu' => [
+                    'listItems' => [
+                        'label' => 'List items',
+                        'url' => Backend::url('hybridlab/shoppinglist/listitems'),
+                        'icon' => 'icon-list-alt',
+                        'permissions' => ['hybridlab.shoppinglist.*'],
+                        'order' => 500,
+                    ],
+//                    'allItems' => [
+//                        'label' => 'All items',
+//                        'url' => Backend::url('hybridlab/shoppinglist/items'),
+//                        'icon' => 'icon-list-alt',
+//                        'permissions' => ['hybridlab.shoppinglist.*'],
+//                        'order' => 500,
+//                    ]
+                ],
+            ]
         ];
     }
 }

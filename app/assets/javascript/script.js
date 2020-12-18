@@ -7,31 +7,28 @@ document.querySelectorAll('img').forEach(img => {
     img.setAttribute('draggable', 'false')
 
 })
-function maxLengthCheck(object)
-{
-if (object.value.length > object.maxLength)
-    object.value = object.value.slice(0, object.maxLength)
+
+function maxLengthCheck(object) {
+    if (object.value.length > object.maxLength) {
+        object.value = object.value.slice(0, object.maxLength)
+
+    }
 }
-
-
-
-
-
 
 
 const app = new Vue({
     el: '#app',
     data: {
         lists: [],
-        curList: {'list_name': '', 'id':'0', 'color': 'blue', 'items': []},
-        newItem: {'name': '', 'quantity': null, 'options':[]},
-        
+        curList: {'list_name': '', 'id': '0', 'color': 'blue', 'items': []},
+        newItem: {'name': '', 'quantity': null, 'options': []},
+
         newList: '',
         adding: false,
         timer: null,
         deleteCheckedState: false,
-        
-        
+
+
     },
     methods: {
         /* Method for deleting whole list */
@@ -46,19 +43,19 @@ const app = new Vue({
                 cancelButtonColor: '#d33',
                 confirmButtonText: 'Vymazať!',
                 cancelButtonText: 'Zrušiť',
-              }).then((result) => {
-                    if(result.isConfirmed){
-                        axios.delete(`http://shoppinglist.test/cms/api/lists/${list.id}`);
-                        this.lists.splice(index, 1);
-                    }
-              });
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    axios.delete(`../cms/api/lists/${list.id}`);
+                    this.lists.splice(index, 1);
+                }
+            });
         },
         /* Methods fo changing and adding list */
         async addNewList(e) {
-            this.adding = true;    
-            this.changeList({'list_name':'', 'color':'blue', 'items':[]}, this.lists.length, e);
-            
-            
+            this.adding = true;
+            this.changeList({'list_name': '', 'color': 'blue', 'items': []}, this.lists.length, e);
+
+
         },
         async changeList(list, index, e) {
             e.stopPropagation();
@@ -71,30 +68,29 @@ const app = new Vue({
             this.$refs.pridatZoznamWrapper.classList.add('pridat-zoznam-active');
         },
         async changeListConfirm() {
-            if(this.newList == '') {
-                this.newList ='Nákupný zoznam';
+            if (this.newList == '') {
+                this.newList = 'Nákupný zoznam';
             }
-            if(this.adding) {
-                let newList = await axios.post(`http://shoppinglist.test/cms/api/lists`, {
+            if (this.adding) {
+                let newList = await axios.post(`../cms/api/lists`, {
                     color: document.querySelector('input[name="farba"]:checked').value,
                     list_name: this.newList,
-                });  
+                });
                 newList.data.items = [];
                 this.curList = newList.data;
                 this.lists.push(newList.data);
                 this.changeListItems(this.curList);
-            }
-            else{
-                axios.patch(`http://shoppinglist.test/cms/api/lists/${this.curList.id}`, {
+            } else {
+                axios.patch(`../cms/api/lists/${this.curList.id}`, {
                     color: document.querySelector('input[name="farba"]:checked').value,
                     list_name: this.newList,
-                });  
+                });
                 this.lists[this.curList.index].list_name = this.newList;
                 this.lists[this.curList.index].color = document.querySelector('input[name="farba"]:checked').value;
             }
-            
+
             this.changeListCancel();
-            
+
         },
         async changeListCancel() {
             this.$refs.pridatZoznamButton.classList.remove('pridat-zoznam-button-active');
@@ -102,22 +98,22 @@ const app = new Vue({
             this.adding = false;
 
         },
-       
-        async changeListItems(list){
+
+        async changeListItems(list) {
             this.curList = list;
             this.$refs.zoznamZoznamov.classList.add('zoznam-active');
-            
+
             this.checkChecked();
-            
+
 
         },
         /* Back to lists */
         async backToLists() {
             this.$refs.zoznamZoznamov.classList.remove('zoznam-active');
-            
+
         },
         async deleteAll() {
-            if(this.curList.items.length != 0) {
+            if (this.curList.items.length != 0) {
                 Swal.fire({
                     text: `Naozaj chcete vyprazdniť celý zoznam?`,
                     icon: 'warning',
@@ -128,82 +124,87 @@ const app = new Vue({
                     confirmButtonText: 'Vymazať!',
                     cancelButtonText: 'Zrušiť',
                 }).then(async (result) => {
-                        if(result.isConfirmed){
-                            axios.delete(`http://shoppinglist.test/cms/api/lists/${this.curList.id}/items`)
-                            this.curList.items = [];
-                        }
+                    if (result.isConfirmed) {
+                        axios.delete(`../cms/api/lists/${this.curList.id}/items`)
+                        this.curList.items = [];
+                    }
                 })
             }
         },
         async addNewItem() {
             this.$refs.type.value = "Ks";
-            
+
             this.$refs.pridatPolozkuWrapper.classList.add('pridat-polozku-active');
             this.$refs.pridatPolozkuButton.classList.add('pridat-zoznam-button-active');
 
         },
-        async addNewItemConfirm(){
-            if(this.newItem.name == '') {
+        async addNewItemConfirm() {
+            if (this.newItem.name == '') {
                 this.$refs.novaPolozka.classList.add('required');
                 return;
 
             }
-            if(this.newItem.quantity == null){
+            if (this.newItem.quantity == null) {
                 this.newItem.quantity = 1;
             }
-            axios.post(`http://shoppinglist.test/cms/api/lists/items`,{
+            axios.post(`../cms/api/lists/items`, {
                 name: this.newItem.name,
                 quantity: parseInt(this.newItem.quantity),
                 type: this.$refs.type.value,
                 completed: false,
                 shopping_list_id: this.curList.id,
-                
-            })
-            .then((response) => this.curList.items.push(response.data))
-            .catch((error) => console.log(error));
 
-            axios.post(`http://shoppinglist.test/cms/api/all-items`,{
+            })
+                .then((response) => this.curList.items.push(response.data))
+                .catch((error) => console.log(error));
+
+            axios.post(`../cms/api/all-items`, {
                 name: this.newItem.name
             });
             // this.curList.items.push(newItem.data);
             this.addNewItemCancel();
-        
+
         },
-        async addNewItemCancel(){
+        async addNewItemCancel() {
             this.$refs.pridatPolozkuButton.classList.remove('pridat-zoznam-button-active');
             this.$refs.pridatPolozkuWrapper.classList.remove('pridat-polozku-active');
-            this.newItem =  {name: '', quantity: null, options:[]}
+            this.newItem = {name: '', quantity: null, options: []}
             this.$refs.novaPolozka.classList.remove('required');
 
         },
+
+
         async stepUp(item, element) {
             element.stopPropagation();
-            if(item.completed == 1) return;
+            if (item.completed == 1) return;
 
             element.path[1].querySelector('input[type=number]').stepUp()
-            this.timer = setInterval(function(){
+            this.timer = setInterval(function () {
                 element.path[1].querySelector('input[type=number]').stepUp()
-            }, 100);  
+            }, 100);
         },
         async stepDown(item, element) {
             element.stopPropagation();
-            if(item.completed == 1) return;
+            if (item.completed == 1) return;
             element.path[1].querySelector('input[type=number]').stepDown()
 
-            this.timer = setInterval(function(){
+            this.timer = setInterval(function () {
+
                 element.path[1].querySelector('input[type=number]').stepDown()
             }, 100);
         },
         async stepEnd(item, element) {
             clearInterval(this.timer)
-            axios.patch(`http://shoppinglist.test/cms/api/lists/items/${item.id}`, {
+            axios.patch(`../cms/api/lists/items/${item.id}`, {
                 quantity: element.path[1].querySelector('input[type=number]').value
             });
         },
+
+
         async checkItem(item) {
-            
-            axios.patch(`http://shoppinglist.test/cms/api/lists/items/${item.id}`, {
-                completed: item.completed == 0 ? true: false
+
+            axios.patch(`../cms/api/lists/items/${item.id}`, {
+                completed: item.completed == 0 ? true : false
             });
             item.completed = item.completed == 0 ? 1 : 0;
             this.checkChecked();
@@ -211,12 +212,12 @@ const app = new Vue({
         async deleteChecked() {
             let items = [...this.curList.items];
             items.forEach(item => {
-                if(item.completed == 1) {
-                    axios.delete(`http://shoppinglist.test/cms/api/lists/items/${item.id}`);
+                if (item.completed == 1) {
+                    axios.delete(`../cms/api/lists/items/${item.id}`);
                     this.curList.items.splice(this.curList.items.indexOf(item), 1)
 
                 }
-                
+
             });
             this.checkChecked();
         },
@@ -224,27 +225,27 @@ const app = new Vue({
             this.deleteCheckedState = false;
 
             this.curList.items.forEach(item => {
-                if(item.completed == "1") {
+                if (item.completed == "1") {
                     this.deleteCheckedState = true;
                 }
-                
+
             });
         },
         async getOptions() {
             this.newItem.name = this.newItem.name.charAt(0).toUpperCase() + this.newItem.name.slice(1)
 
-            if(this.newItem.name == "") {
+            if (this.newItem.name == "") {
                 this.newItem.options = [];
                 return;
 
             }
-            axios.get(`http://shoppinglist.test/cms/api/all-items/${this.newItem.name}`)
-            .then((response) => {
-                
-                this.newItem.options = response.data
-               
-            }).catch((error) => console.log(error));
-            
+            axios.get(`../cms/api/all-items/${this.newItem.name}`)
+                .then((response) => {
+
+                    this.newItem.options = response.data
+
+                }).catch((error) => console.log(error));
+
         },
         async chooseOption(option) {
             this.newItem.name = option.name;
@@ -252,26 +253,27 @@ const app = new Vue({
         },
         async deleteOption(option, e) {
             e.stopPropagation();
-            axios.delete(`http://shoppinglist.test/cms/api/all-items/${option.id}`)
-            .then(() => {
-                
-                this.getOptions();
-               
-            }).catch((error) => console.log(error));
+            axios.delete(`../cms/api/all-items/${option.id}`)
+                .then(() => {
+
+                    this.getOptions();
+
+                }).catch((error) => console.log(error));
         },
         async onEnter() {
-           this.$refs.quantity.focus();
+            this.$refs.quantity.focus();
         },
-        
 
 
-          
     },
-    mounted: 
-        async function() {
-            axios.get(`http://shoppinglist.test/cms/api/lists`)
-            .then((response) => this.lists = response.data)
-            .catch((error) => console.log(error));
-            
-    },
+    mounted:
+        async function () {
+            axios.get(`../cms/api/lists`)
+                .then((response) => {
+                    this.lists = response.data;
+                    console.log(response.data)
+                })
+                .catch((error) => console.log(error));
+
+        },
 })

@@ -1,0 +1,15 @@
+[
+  {
+    "list_name": "Nakupny zoznam1",
+    "color": "blue",
+    "id": 1,
+    "items": [
+      {
+        "name": "item1",
+        "quantity": 100,
+        "type": "Ks",
+        "id": 1
+      }
+    ]
+  }
+]

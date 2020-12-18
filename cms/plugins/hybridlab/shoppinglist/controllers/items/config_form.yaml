@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Item
+
+# Model Form Field configuration
+form: $/hybridlab/shoppinglist/models/item/fields.yaml
+
+# Model Class name
+modelClass: Hybridlab\ShoppingList\Models\Item
+
+# Default redirect location
+defaultRedirect: hybridlab/shoppinglist/items
+
+# Create page
+create:
+    title: Create Item
+    redirect: hybridlab/shoppinglist/items/update/:id
+    redirectClose: hybridlab/shoppinglist/items
+
+# Update page
+update:
+    title: Edit Item
+    redirect: hybridlab/shoppinglist/items
+    redirectClose: hybridlab/shoppinglist/items
+
+# Preview page
+preview:
+    title: Preview Item

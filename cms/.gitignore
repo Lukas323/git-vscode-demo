@@ -1,6 +1,6 @@
 /bootstrap/compiled.php
-composer.phar
 /vendor
+composer.phar
 .DS_Store
 .idea
 .env

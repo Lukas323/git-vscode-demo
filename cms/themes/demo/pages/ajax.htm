@@ -1,136 +1,73 @@
 title = "AJAX framework"
 url = "/demo/ajax"
 layout = "default"
-is_hidden = 0
-
-
 ==
-<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<?php
+function onTest()
+{
+    $value1 = input('value1');
+    $value2 = input('value2');
+    $operation = input('operation');
 
-<style>
-    .lists {
-        max-width: 1140px;
-        padding-top: 50px;
-        text-align: center;
+    switch ($operation) {
+        case '+' :
+            $this['result'] = $value1 + $value2;
+            break;
+        case '-' :
+            $this['result'] = $value1 - $value2;
+            break;
+        case '*' :
+            $this['result'] = $value1 * $value2;
+            break;
+        default :
+            $this['result'] = $value1 / $value2;
+            break;
     }
-
-    .items ul, .lists ul {
-        list-style: none;
-    }
-
-    .items ul li, .lists ul li {
-        max-width: 400px;
-        margin: 10px auto;
-        background: #3d9690;
-        color: black;
-        text-align: left;
-        padding: 10px 20px;
-    }
-
-    .items {
-        display: none;
-        position: fixed;
-        top: 0;
-        background: rgba(0, 0, 0, .4);
-        height: 100%;
-        width: 100%;
-    }
-
-    .items-wrapper {
-        margin: 100px auto auto;
-        max-width: 500px;
-        height: 400px;
-        background: white;
-
-    }
-
-    .items-wrapper input {
-
-    }
-
-
-</style>
-<div class="lists">
-    <ul id="all-lists">
-
-    </ul>
-    <button onclick="addNewList()">Add</button>
-</div>
-<div class="items">
-    <div class="items-wrapper">
-        <ul id="all-items">
-
-        </ul>
-        <button onclick="$('.items').hide()">Back</button>
+}
+?>
+==
+<div class="jumbotron title-js">
+    <div class="container">
+        <div class="row">
+            <div class="col-8">
+                <h1>AJAX framework</h1>
+                <p>This built-in JavaScript framework provides simple but powerful AJAX capabilities. Check out the calculator example below.</p>
+            </div>
+        </div>
     </div>
 </div>
 
-<script>
-    async function getAll(link = '') {
-        return new Promise((resolve, reject) => {
-            axios.get(`http://shoppinglist.test/api/lists/${link}`)
-                .then(response => resolve(response.data))
-                .catch(error => reject(error.response))
-        });
-    }
-    async function createList() {
-        const lists = await getAll();
-        $('#all-lists').html('');
-        lists.forEach(list => {
-            $('#all-lists').append(`
-                    <li onclick="changeList(this)" data-id="${list.id}">
-                        ${list.list_name}
-                        <button onclick="deleteList(event)">Delete</button>
-                    </li>
-                `);
-        });
-    }
-    createList();
+<div class="container">
 
-    function deleteList(e) {
-        e.stopPropagation();
-        let id = e.path[1].getAttribute('data-id');
-        axios.delete(`http://shoppinglist.test/api/lists/${id}`).catch(error => console.log(error))
-        createList();
-    }
-    function changeList(list) {
-        let ul = $('#all-items');
-        ul.html('')
-        let id;
-        if(typeof(list) == "number") {
-            id = list;
-        }
-        else {
-            id = list.getAttribute('data-id')
-        }
-        console.log(id)
-        const items = getAll(`${id}/items`);
-        $('.items').show();
-        items.forEach(item => {
-            ul.append(`
-                    <li>
-                        ${item.name}
-                        ${item.quantity}
-                        ${item.type}
-                    </li>
-                `);
-        });
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Calculator</h3>
+        </div>
+        <div class="panel-body">
+            <form role="form" class="form-inline" data-request="onTest" data-request-update="calcresult: '#result'">
+                <input type="text" class="form-control" value="15" name="value1" style="width:100px">
+                <select class="form-control" name="operation" style="width: 70px">
+                    <option>+</option>
+                    <option>-</option>
+                    <option>*</option>
+                    <option>/</option>
+                </select>
+                <input type="text" class="form-control" value="5" name="value2" style="width:100px">
+                <button type="submit" class="btn btn btn-primary" data-attach-loading>Calculate</button>
+            </form>
+        </div>
+        <div class="panel-footer" id="result">
+            {% partial "calcresult" %}
+        </div>
+    </div>
 
-    }
-    function addNewList(){
-        axios.post('http://shoppinglist.test/api/lists', {
-            color: 'blue'
-        }).then(function (response) {
-            createList();
-            changeList(response.data['id']);
-        }).catch(function(error){
-            console.log(error);
-        })
-    }
+</div>
 
-    function itemsBack() {
-        $('.items').hide();
-    }
+<!-- Page Explanation -->
+<div class="container">{% partial "explain/ajax.htm" %}</div>
 
-</script>
+<br />
+
+<div class="text-center">
+    <p><a href="{{ 'plugins'|page }}" class="btn btn-lg btn-default">Continue to Plugin components</a></p>
+</div>

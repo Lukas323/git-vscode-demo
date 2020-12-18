@@ -1,3 +1,5 @@
 1.0.1:
-  - First version of ShoppingList
-  - create_shopping_lists_table.php
+    - First version of ShoppingList
+    - create_shopping_lists_table.php
+    - create_items_table.php
+    - create_list_items_table.php
