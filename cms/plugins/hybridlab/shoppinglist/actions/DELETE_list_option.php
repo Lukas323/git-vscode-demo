@@ -5,6 +5,6 @@ use Hybridlab\ShoppingList\Models\Item;
 class DELETE_list_option {
 
     public function handle($id) {
-        Item::where('id', $id)->first()->delete();
+        Item::where('id', $id)->firstOrFail()->delete();
     }
 }

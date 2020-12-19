@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand />
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5c216ca5-ee21-4c8b-b6ed-cdeccadd0aa8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/app/assets/javascript/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/javascript/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cms/plugins/hybridlab/shoppinglist/actions/DELETE_item.php" beforeDir="false" afterPath="$PROJECT_DIR$/cms/plugins/hybridlab/shoppinglist/actions/DELETE_item.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cms/plugins/hybridlab/shoppinglist/actions/DELETE_list.php" beforeDir="false" afterPath="$PROJECT_DIR$/cms/plugins/hybridlab/shoppinglist/actions/DELETE_list.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cms/plugins/hybridlab/shoppinglist/actions/DELETE_list_item.php" beforeDir="false" afterPath="$PROJECT_DIR$/cms/plugins/hybridlab/shoppinglist/actions/DELETE_list_item.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cms/plugins/hybridlab/shoppinglist/actions/DELETE_list_option.php" beforeDir="false" afterPath="$PROJECT_DIR$/cms/plugins/hybridlab/shoppinglist/actions/DELETE_list_option.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cms/plugins/hybridlab/shoppinglist/actions/PATCH_list.php" beforeDir="false" afterPath="$PROJECT_DIR$/cms/plugins/hybridlab/shoppinglist/actions/PATCH_list.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cms/plugins/hybridlab/shoppinglist/models/ListItem.php" beforeDir="false" afterPath="$PROJECT_DIR$/cms/plugins/hybridlab/shoppinglist/models/ListItem.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cms/plugins/hybridlab/shoppinglist/models/listitem/fields.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/cms/plugins/hybridlab/shoppinglist/models/listitem/fields.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cms/plugins/hybridlab/shoppinglist/models/shoppinglist/fields.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/cms/plugins/hybridlab/shoppinglist/models/shoppinglist/fields.yaml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/cms/composer.json</pharConfigPath>
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/cms/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/cms/vendor/php-parallel-lint/php-parallel-lint" />
+      <path value="$PROJECT_DIR$/cms/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/cms/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/cms/vendor/jakub-onderka/php-console-highlighter" />
+      <path value="$PROJECT_DIR$/cms/vendor/kriswallsmith/assetic" />
+      <path value="$PROJECT_DIR$/cms/vendor/tijsverkoyen/css-to-inline-styles" />
+      <path value="$PROJECT_DIR$/cms/vendor/jakub-onderka/php-console-color" />
+      <path value="$PROJECT_DIR$/cms/vendor/jenssegers/date" />
+      <path value="$PROJECT_DIR$/cms/vendor/swiftmailer/swiftmailer" />
+      <path value="$PROJECT_DIR$/cms/vendor/wikimedia/composer-merge-plugin" />
+      <path value="$PROJECT_DIR$/cms/vendor/fzaninotto/faker" />
+      <path value="$PROJECT_DIR$/cms/vendor/squizlabs/php_codesniffer" />
+      <path value="$PROJECT_DIR$/cms/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/cms/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/cms/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/cms/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/cms/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/cms/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/cms/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/cms/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/cms/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/cms/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/cms/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/cms/vendor/paragonie/random_compat" />
+      <path value="$PROJECT_DIR$/cms/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/cms/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/cms/vendor/mtdowling/cron-expression" />
+      <path value="$PROJECT_DIR$/cms/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/cms/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/cms/vendor/doctrine/common" />
+      <path value="$PROJECT_DIR$/cms/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/cms/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/cms/vendor/doctrine/collections" />
+      <path value="$PROJECT_DIR$/cms/vendor/doctrine/annotations" />
+      <path value="$PROJECT_DIR$/cms/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/cms/vendor/symfony/var-dumper" />
+      <path value="$PROJECT_DIR$/cms/vendor/symfony/yaml" />
+      <path value="$PROJECT_DIR$/cms/vendor/symfony/routing" />
+      <path value="$PROJECT_DIR$/cms/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/cms/vendor/symfony/polyfill-util" />
+      <path value="$PROJECT_DIR$/cms/vendor/symfony/process" />
+      <path value="$PROJECT_DIR$/cms/vendor/symfony/polyfill-php70" />
+      <path value="$PROJECT_DIR$/cms/vendor/symfony/polyfill-php72" />
+      <path value="$PROJECT_DIR$/cms/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/cms/vendor/symfony/polyfill-php56" />
+      <path value="$PROJECT_DIR$/cms/vendor/symfony/polyfill-intl-idn" />
+      <path value="$PROJECT_DIR$/cms/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/cms/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/cms/vendor/symfony/polyfill-iconv" />
+      <path value="$PROJECT_DIR$/cms/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/cms/vendor/symfony/http-kernel" />
+      <path value="$PROJECT_DIR$/cms/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/cms/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/cms/vendor/symfony/css-selector" />
+      <path value="$PROJECT_DIR$/cms/vendor/symfony/debug" />
+      <path value="$PROJECT_DIR$/cms/vendor/composer" />
+      <path value="$PROJECT_DIR$/cms/vendor/phpunit/phpunit-selenium" />
+      <path value="$PROJECT_DIR$/cms/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/cms/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/cms/vendor/phpunit/phpunit-mock-objects" />
+      <path value="$PROJECT_DIR$/cms/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/cms/vendor/phpunit/php-token-stream" />
+      <path value="$PROJECT_DIR$/cms/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/cms/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/cms/vendor/phpspec/prophecy" />
+      <path value="$PROJECT_DIR$/cms/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/cms/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/cms/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/cms/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/cms/vendor/october/rain" />
+      <path value="$PROJECT_DIR$/cms/vendor/linkorb/jsmin-php" />
+      <path value="$PROJECT_DIR$/cms/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/cms/vendor/laravel/framework" />
+      <path value="$PROJECT_DIR$/cms/vendor/laravel/tinker" />
+      <path value="$PROJECT_DIR$/cms/vendor/dnoegel/php-xdg-base-dir" />
+      <path value="$PROJECT_DIR$/cms/vendor/egulias/email-validator" />
+      <path value="$PROJECT_DIR$/cms/vendor/ramsey/uuid" />
+      <path value="$PROJECT_DIR$/cms/vendor/vlucas/phpdotenv" />
+      <path value="$PROJECT_DIR$/cms/vendor/league/flysystem" />
+      <path value="$PROJECT_DIR$/cms/vendor/nesbot/carbon" />
+      <path value="$PROJECT_DIR$/cms/vendor/erusev/parsedown-extra" />
+      <path value="$PROJECT_DIR$/cms/vendor/league/csv" />
+      <path value="$PROJECT_DIR$/cms/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/cms/vendor/erusev/parsedown" />
+      <path value="$PROJECT_DIR$/cms/vendor/leafo/scssphp" />
+      <path value="$PROJECT_DIR$/cms/vendor/meyfa/phpunit-assert-gd" />
+      <path value="$PROJECT_DIR$/cms/vendor/psy/psysh" />
+      <path value="$PROJECT_DIR$/cms/vendor/twig/twig" />
+      <path value="$PROJECT_DIR$/cms/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/cms/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/cms/vendor/psr/container" />
+    </include_path>
+  </component>
+  <component name="ProjectId" id="1lpM8OEVXmiMvosvh3TY7qwKZXo" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5c216ca5-ee21-4c8b-b6ed-cdeccadd0aa8" name="Default Changelist" comment="" />
+      <created>1608289420046</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1608289420046</updated>
+      <workItem from="1608289422153" duration="8800000" />
+      <workItem from="1608321206116" duration="539000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="460" y="180" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1608316501444">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="2610" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1280.680/1920.0.1920.1040@1920.0.1920.1040" timestamp="1608292683000" />
+    <state x="460" y="180" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1280.680@0.0.1280.680" timestamp="1608316501444" />
+  </component>
+</project>

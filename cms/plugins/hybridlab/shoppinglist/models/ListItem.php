@@ -25,16 +25,17 @@ class ListItem extends Model
     ];
     public function getShoppingListIdOptions()
     {
-        return array_merge([null => 'no list'], ShoppingList::pluck('list_name', 'id')->toArray());
+        return ShoppingList::pluck('list_name', 'id');
     }
 
 
     public function getTypeOptions()
     {
         return [
-            'pcs' => 'pieces',
-            'kg' => 'kilogram',
-            'l' => 'liters'
+            'ks' => 'kusy',
+            'kg' => 'kilogramy',
+            'L' => 'litre',
+            'g' => 'gramy'
         ];
     }
 

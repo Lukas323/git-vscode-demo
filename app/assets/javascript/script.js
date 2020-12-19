@@ -176,7 +176,7 @@ const app = new Vue({
 
         async stepUp(item, element) {
             element.stopPropagation();
-            if (item.completed == 1) return;
+            if (item.completed === 1) return;
 
             element.path[1].querySelector('input[type=number]').stepUp()
             this.timer = setInterval(function () {
@@ -185,7 +185,7 @@ const app = new Vue({
         },
         async stepDown(item, element) {
             element.stopPropagation();
-            if (item.completed == 1) return;
+            if (item.completed === 1) return;
             element.path[1].querySelector('input[type=number]').stepDown()
 
             this.timer = setInterval(function () {
@@ -198,6 +198,7 @@ const app = new Vue({
             axios.patch(`../cms/api/lists/items/${item.id}`, {
                 quantity: element.path[1].querySelector('input[type=number]').value
             });
+            item.quantity = element.path[1].querySelector('input[type=number]').value;
         },
 
 
@@ -206,7 +207,8 @@ const app = new Vue({
             axios.patch(`../cms/api/lists/items/${item.id}`, {
                 completed: item.completed == 0 ? true : false
             });
-            item.completed = item.completed == 0 ? 1 : 0;
+            console.log(item)
+            item.completed = (item.completed == 0 ? 1 : 0);
             this.checkChecked();
         },
         async deleteChecked() {

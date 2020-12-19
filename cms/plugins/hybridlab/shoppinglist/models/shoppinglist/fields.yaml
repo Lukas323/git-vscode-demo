@@ -15,4 +15,5 @@ fields:
         label: Items
         type: partial
         path: items
+        context: update
 

@@ -5,7 +5,7 @@ use Hybridlab\ShoppingList\Models\ShoppingList;
 class DELETE_list_item {
 
     public function handle($list_id) {
-        foreach(ShoppingList::where('id', $list_id)->first()->items as $item){
+        foreach(ShoppingList::where('id', $list_id)->firstOrFail()->items as $item){
             $item->delete();
         }
     }

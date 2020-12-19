@@ -18,16 +18,9 @@ fields:
     shopping_list_id:
         label: List ID
         type: dropdown
+        emptyOption: No shopping list
     completed:
         label: Completed
         type: checkbox
         default: false
-#    sort_order_handle:
-#        label: " "
-#        type: partial
-#        path: $/hybridlab/listitem/models/listitem/_reorder_handle.htm
-#        sortable: false
-#        width: 60px
-#    sort_order:
-#        invisible: true
-#        type: number
+
